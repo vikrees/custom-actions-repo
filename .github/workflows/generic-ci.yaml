@@ -19,4 +19,5 @@ jobs:
         uses: ./steps/build_action.yml
         with:
           tags: ${{ inputs.tags }}
+          Dockerfile: ${{ inputs.Dockerfile }}
           build-args: ${{ inputs.build-args }}
