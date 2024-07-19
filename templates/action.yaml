@@ -22,7 +22,7 @@ jobs:
       - name: List Application Directory Content
         run: ls -la ${{ github.workspace }}
       - name: Build Docker Image
-        uses: ./steps/build_action.yml
+        uses: vikrees/custom-actions-repo/build@main
         with:
           tags: ${{ inputs.tags }}
           Dockerfile: ${{ inputs.Dockerfile }}
