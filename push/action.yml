@@ -9,5 +9,6 @@ runs:
     - name: Push app image
       uses: docker/build-push-action@v2
       with:
+        context: .
         push: True
         tags: ${{ inputs.tags }}
