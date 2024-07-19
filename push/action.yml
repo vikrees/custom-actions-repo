@@ -5,10 +5,10 @@ inputs:
   tags:
     description: 'Tags for the Docker image'
     required: true
-  docker_pat:
+  password:
     description: 'Docker Personal Access Token'
     required: true
-  docker_username:
+  username:
     description: 'Docker Hub Username'
     required: true
     
