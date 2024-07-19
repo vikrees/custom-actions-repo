@@ -14,7 +14,10 @@ on:
         required: false
         type: string
         
-
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v2
 jobs:
   build:
     runs-on: ubuntu-latest
