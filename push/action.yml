@@ -7,7 +7,7 @@ runs:
     - uses: actions/checkout@v2
 
     - name: Login to Docker Hub
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      run: echo Tuk46ret! | docker login -u vikree@gmail.com" --password-stdin
 
     - name: Push app image
       run: docker push ${{ inputs.tags }}
