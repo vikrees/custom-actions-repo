@@ -1,4 +1,3 @@
-# vikrees/custom-actions-repo/.github/workflows/generic-ci.yaml
 name: Generic CI Workflow
 
 on:
@@ -13,11 +12,17 @@ on:
       Dockerfile:
         required: false
         type: string
-        
+
 runs:
   using: "composite"
   steps:
     - name: Build Docker Image
       uses: vikrees/custom-actions-repo/build@main
-    - name: push Docker Image
+      with:
+        tags: ${{ inputs.tags }}
+        Dockerfile: ${{ inputs.Dockerfile }}
+        build-args: ${{ inputs.build-args }}
+    - name: Push Docker Image
       uses: vikrees/custom-actions-repo/push@main
+      with:
+        tags: ${{ inputs.tags }}
