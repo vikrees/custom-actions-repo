@@ -24,6 +24,6 @@ runs:
         Dockerfile: ${{ inputs.Dockerfile }}
         build-args: ${{ inputs.build-args }}
     - name: Push Docker Image
-      vikrees/custom-actions-repo/push@main
+      uses: vikrees/custom-actions-repo/push@main
       with:
         tags: ${{ inputs.tags }}
