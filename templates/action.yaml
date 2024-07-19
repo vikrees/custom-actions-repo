@@ -17,9 +17,7 @@ on:
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v2
     - name: Build Docker Image
       uses: vikrees/custom-actions-repo/build@main
-    - uses: actions/checkout@v2
     - name: push Docker Image
       uses: vikrees/custom-actions-repo/push@main
