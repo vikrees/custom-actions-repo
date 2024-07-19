@@ -13,4 +13,4 @@ runs:
         file: ${{ inputs.Dockerfile }}
         push: false
         tags: ${{ inputs.tags }}
-        build-args: BUILD_ARG=value
+        build-args: ${{ inputs.build-args }}
