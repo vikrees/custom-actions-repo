@@ -33,3 +33,5 @@ runs:
       uses: vikrees/custom-actions-repo/push@main
       with:
         tags: ${{ inputs.tags }}
+        username: ${{ input.docker_username }}
+        password: ${{ input.docker_pat }}
