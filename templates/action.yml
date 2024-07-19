@@ -17,12 +17,12 @@ runs:
   using: "composite"
   steps:
     - name: Build Docker Image
-      uses: ./build/action.yml
+      uses: ./build@main
       with:
         tags: ${{ inputs.tags }}
         Dockerfile: ${{ inputs.Dockerfile }}
         build-args: ${{ inputs.build-args }}
     - name: Push Docker Image
-      uses: ./push/action.yml
+      uses: ./push@main
       with:
         tags: ${{ inputs.tags }}
