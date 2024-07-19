@@ -1,3 +1,4 @@
+# vikrees/custom-actions-repo/.github/workflows/generic-ci.yaml
 name: Generic CI Workflow
 
 on:
@@ -15,13 +16,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build Docker Image
-        uses: vikrees/custom-actions-repo/steps/build_action.yml@main
-
+        uses: ./steps/build_action.yml
+        with:
+          tags: ${{ inputs.tags }}
+          build-args: ${{ inputs.build-args }}
 
   push:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Push Docker Image
-        uses: vikrees/custom-actions-repo/steps/push_action.yml@main
+        uses: ./steps/push_action.yml@main
 
