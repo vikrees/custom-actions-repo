@@ -10,5 +10,5 @@ runs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        push: True
+        push: true
         tags: ${{ inputs.tags }}
