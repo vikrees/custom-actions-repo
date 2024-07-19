@@ -1,6 +1,11 @@
 name: Push Docker Image
 description: Push the Docker image
 
+inputs:
+  tags:
+    description: 'Tags for the Docker image'
+    required: true
+
 runs:
   using: "composite"
   steps:
