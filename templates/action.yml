@@ -12,6 +12,12 @@ on:
       Dockerfile:
         required: false
         type: string
+      DOCKER_PAT:
+        description: 'Docker Personal Access Token'
+        required: true
+      DOCKER_USERNAME:
+        description: 'Docker Hub Username'
+        required: true
 
 runs:
   using: "composite"
