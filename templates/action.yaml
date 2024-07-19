@@ -19,11 +19,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: List Application Directory Content
-        run: ls -la ${{ github.workspace }}
       - name: Build Docker Image
         uses: vikrees/custom-actions-repo/build@main
-        with:
-          tags: ${{ inputs.tags }}
-          Dockerfile: ${{ inputs.Dockerfile }}
-          build-args: ${{ inputs.build-args }}
