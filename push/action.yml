@@ -19,7 +19,7 @@ runs:
       uses: actions/checkout@v2
 
     - name: Log in to Docker Hub
-      run: echo "${{ inputs.docker_pat }}" | docker login -u ${{ inputs.docker_username }} --password-stdin
+      run: docker login -u ${{ inputs.docker_username }} -p ${{ inputs.docker_pat }}
       shell: bash
 
     - name: Push app image
