@@ -12,10 +12,10 @@ on:
       Dockerfile:
         required: false
         type: string
-      docker_pat:
+      password:
         description: 'Docker Personal Access Token'
         required: true
-      docker_username:
+      username:
         description: 'Docker Hub Username'
         required: true
 
@@ -33,5 +33,5 @@ runs:
       uses: vikrees/custom-actions-repo/push@main
       with:
         tags: ${{ inputs.tags }}
-        username: ${{ inputs.docker_username }}
-        password: ${{ inputs.docker_pat }}
+        username: ${{ inputs.username }}
+        password: ${{ inputs.password }}
