@@ -10,6 +10,10 @@ on:
       build-args:
         required: false
         type: string
+      Dockerfile:
+        required: false
+        type: string
+        
 
 jobs:
   build:
