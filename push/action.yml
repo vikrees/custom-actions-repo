@@ -5,10 +5,10 @@ inputs:
   tags:
     description: 'Tags for the Docker image'
     required: true
-  DOCKER_PAT:
+  docker_pat:
     description: 'Docker Personal Access Token'
     required: true
-  DOCKER_USERNAME:
+  docker_username:
     description: 'Docker Hub Username'
     required: true
     
@@ -19,7 +19,7 @@ runs:
       uses: actions/checkout@v2
 
     - name: Log in to Docker Hub
-      run: docker login -u ${{ inputs.docker_username }} -p ${{ inputs.docker_pat }}
+      run: echo "${{ inputs.docker_pat }}" | docker login -u ${{ inputs.docker_username }} --password-stdin
       shell: bash
 
     - name: Push app image
