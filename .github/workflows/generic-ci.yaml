@@ -19,6 +19,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: List Application Directory Content
+        run: ls -la ${{ github.workspace }}
       - name: Build Docker Image
         uses: ./steps/build_action.yml
         with:
