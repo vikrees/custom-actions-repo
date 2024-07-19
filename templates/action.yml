@@ -17,12 +17,12 @@ runs:
   using: "composite"
   steps:
     - name: Build Docker Image
-      uses: vikrees/custom-actions-repo/build@main
+      uses: ./build/action.yml
       with:
         tags: ${{ inputs.tags }}
         Dockerfile: ${{ inputs.Dockerfile }}
         build-args: ${{ inputs.build-args }}
     - name: Push Docker Image
-      uses: vikrees/custom-actions-repo/push@main
+      uses: ./push/action.yml
       with:
         tags: ${{ inputs.tags }}
