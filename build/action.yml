@@ -1,6 +1,17 @@
 name: Build Docker Image
 description: Build the Docker image
 
+inputs:
+  tags:
+    description: 'Tags for the Docker image'
+    required: true
+  Dockerfile:
+    description: 'Path to the Dockerfile'
+    required: true
+  build-args:
+    description: 'Build arguments for Docker'
+    required: false
+
 runs:
   using: "composite"
   steps:
