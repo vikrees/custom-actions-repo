@@ -1,5 +1,14 @@
+# vikrees/custom-actions-repo/steps/build_action.yml
 name: Build Docker Image
 description: Build the Docker image
+
+inputs:
+  tags:
+    required: true
+    description: 'Docker image tags'
+  build-args:
+    required: false
+    description: 'Build arguments for Docker'
 
 runs:
   using: "composite"
@@ -9,8 +18,8 @@ runs:
     - name: Build app image
       uses: docker/build-push-action@v2
       with:
-        context: .
+        context: ${{ github.workspace }}
         file: ${{ github.workspace }}/Dockerfile
         push: false
         tags: ${{ inputs.tags }}
-        build-args: BUILD_ARG=value
+        build-args: ${{ inputs.build-args }}
