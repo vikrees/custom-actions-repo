@@ -25,7 +25,8 @@ runs:
     - uses: actions/checkout@v3
     - name: Set up environment variables
       run: |
-       echo "APPLICATION_IMAGE=${{ inputs.username }}:${{ github.run_id }}.${{ github.run_number }}.${{ github.run_attempt }}" >> $GITHUB_ENV
+       echo "APPLICATION_IMAGE=${{ inputs.build-args }}:${{ github.run_id }}.${{ github.run_number }}.${{ github.run_attempt }}" >> $GITHUB_ENV
+       cat $GITHUB_ENV
       shell: bash
 
     - name: Build Docker Image
