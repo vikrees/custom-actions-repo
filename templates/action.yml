@@ -24,7 +24,7 @@ runs:
   steps:
     - uses: actions/checkout@v3
     - name: Build Docker Image
-      uses: vikrees/custom-actions-repo/build/action.yml@main
+      uses: vikrees/custom-actions-repo/build@main
       with:
         tags: ${{ inputs.tags }}
         Dockerfile: ${{ inputs.Dockerfile }}
