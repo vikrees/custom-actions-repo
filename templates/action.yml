@@ -23,6 +23,11 @@ runs:
   using: "composite"
   steps:
     - uses: actions/checkout@v3
+    - name: Set up environment variables
+      run: |
+       echo "APPLICATION_IMAGE=${{ inputs.username }}:${{ github.run_id }}.${{ github.run_number }}.${{ github.run_attempt }}" >> $GITHUB_ENV
+      shell: bash
+
     - name: Build Docker Image
       uses: vikrees/custom-actions-repo/build@main
       with:
