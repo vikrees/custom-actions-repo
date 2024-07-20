@@ -24,14 +24,14 @@ runs:
   steps:
     - uses: actions/checkout@v3
     - name: Build Docker Image
-      uses: vikrees/custom-actions-repo/steps@main
+      uses: vikrees/custom-actions-repo/build@main
       with:
         tags: ${{ inputs.tags }}
         Dockerfile: ${{ inputs.Dockerfile }}
         build-args: ${{ inputs.build-args }}
-#    - name: Push Docker Image
-#      uses: vikrees/custom-actions-repo/push@main
-#      with:
-#        tags: ${{ inputs.tags }}
+    - name: Push Docker Image
+      uses: vikrees/custom-actions-repo/push@main
+      with:
+        tags: ${{ inputs.tags }}
         username: ${{ inputs.username }}
         password: ${{ inputs.password }}
