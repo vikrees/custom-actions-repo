@@ -37,7 +37,7 @@ runs:
      #   build-args: ${{ inputs.build-args }}
     - name: Build Docker image with custom and latest tags
       run: |
-        /usr/bin/docker buildx build ${{ inputs.build-args }} --file ${{ inputs.Dockerfile }} --tag ${{ inputs.tags }} . 
+        /usr/bin/docker buildx build --build-arg ${{ inputs.build-args }} --file ${{ inputs.Dockerfile }} --tag ${{ inputs.tags }} . 
       shell: bash
     - name: Push Docker Image
       uses: vikrees/custom-actions-repo/push@main
